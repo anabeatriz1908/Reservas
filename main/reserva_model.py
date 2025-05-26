@@ -1,6 +1,7 @@
 from config import db
+import requests
+import clients.clients as clients
 
-#importar turmas
 
 class ReservaNaoEncontrada(Exception):
         pass
@@ -13,9 +14,7 @@ class Reservas(db.Model):
     lab = db.Column(db.Boolean, nullable=False)
     data = db.Column(db.String(20), nullable=True)
 
-
-    turma_id = db.Column(db.Integer, db.ForeignKey("turma.id"), nullable=True)
-    turma = db.relationship("Turmas", back_populates="reserva")
+    turma_id = db.Column(db.Integer, nullable=True)
 
     def __init__(self, num_sala, lab, data, turma_id):
         self.num_sala = num_sala
@@ -32,11 +31,13 @@ class Reservas(db.Model):
             "turma_id": self.turma_id
             }
 
-def create_reserva(self, dados_reserva):
+def create_reserva(dados_reserva):
     
-    turma = Turmas.query.get(aluno["turma_id"]) #importar turmas
-    if(turma is None):
-        return {"message":"Turma não existe"}
+    url = f"{clients.API_PRINCIPAL_URL}/turmas/{dados_reserva["turma_id"]}"
+    response = requests.get(url)
+
+    if response.status_code != 200:
+       return {"message":"Turma não existe"}
     
     nova_reserva = Reservas(
         num_sala = int(dados_reserva['num_sala']),
@@ -48,11 +49,11 @@ def create_reserva(self, dados_reserva):
     db.session.commit()
     return{'Mensagem':'Reserva criada com sucesso'}
 
-def read_reservas(self):
+def read_reservas():
     reservas = Reservas.query.all()
     return [reserva.to_dict() for reserva in reservas]
 
-def read_reserva(self, id_reserva):
+def read_reserva(id_reserva):
      reserva= Reservas.query.get(id_reserva)
      
      if not reserva:
