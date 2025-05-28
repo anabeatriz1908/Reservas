@@ -4,13 +4,16 @@ Este repositório contém a **API de Reserva de Salas**, desenvolvida com **Flas
 
 ## 🧩 Arquitetura
 
-A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema maior de [School System](https://github.com/caio-ireno/School-System-Api)
-, sendo responsável exclusivamente pelo gerenciamento das reservas de salas por turma.
+A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema maior de [School System](#colocar link do nosso github), sendo responsável exclusivamente pelo gerenciamento das reservas de salas por turma.
 
 ⚠️ **Esta API depende de outra API de Gerenciamento Escolar (School System)**, que deve estar em execução e exposta localmente. A comunicação entre os serviços ocorre via **requisições HTTP REST**, para validar:
 
 - Se a **Turma** existe (`GET /turmas/<id>`)
-- (Opcional) Se o **Aluno** existe (`GET /alunos/<id>`) – pode ser desativado se não usado.
+
+A Api de gerenciamento escolar, esá disponivél no repositório abaixo.
+
+https://github.com/anabeatriz1908/API-School-System.git
+
 
 ---
 
@@ -29,7 +32,7 @@ A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema m
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/reserva-salas.git
+git clone https://github.com/anabeatriz1908/Reservas.git
 cd reserva-salas
 ```
 
@@ -109,14 +112,16 @@ reserva-salas/
 
 ---
 
-## 🛠️ Futuras Melhorias
+## 🧑‍💻 Autores
 
-- Validação de conflito de horário na sala
-- Integração via fila (RabbitMQ) com outros microsserviços
-- Autenticação de usuários
+Ana Beatriz Silva Santos - RA: 2401228
 
----
+Luiz Otávio Santos Silva - RA: 2401300
 
-## 🧑‍💻 Autor
+Murillo Rodrigues Santos Pereira - RA: 2400338
 
-Caio Ireno – Projeto educativo de arquitetura com Flask e microsserviços.
+Pablo Neves Vavrik - RA: 2400125
+
+Uatila dos Santos Silva - RA: 2400250
+
+– Projeto educativo de arquitetura com Flask e microsserviços.
