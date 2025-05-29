@@ -33,7 +33,7 @@ https://github.com/anabeatriz1908/API-School-System.git
 
 ```bash
 git clone https://github.com/anabeatriz1908/Reservas.git
-cd reserva-salas
+cd Reservas
 ```
 
 ### 2. Crie um ambiente virtual (opcional, mas recomendado)
@@ -68,8 +68,7 @@ A aplicação estará disponível em:
 - `GET /reservas` – Lista todas as reservas
 - `POST /reservas` – Cria uma nova reserva
 - `GET /reservas/<id>` – Detalha uma reserva
-- `PUT /reservas/<id>` – Atualiza uma reserva
-- `DELETE /reservas/<id>` – Remove uma reserva
+
 
 ### Exemplo de corpo JSON para criação:
 
@@ -90,7 +89,7 @@ A aplicação estará disponível em:
 Certifique-se de que a **API de Gerenciamento Escolar** esteja rodando em:
 
 ```
-http://localhost:5000
+http://localhost:5036
 ```
 
 E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) estejam funcionando corretamente para que a validação seja feita com sucesso.
@@ -101,13 +100,13 @@ E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) es
 
 ```
 reserva-salas/
-│
 ├── app.py
 ├── reserva_model.py
+├── reserva_controller.py
 ├── database.py
 ├── routes.py
 ├── requirements.txt
-└── README.md
+├── README.md
 ```
 
 ---
