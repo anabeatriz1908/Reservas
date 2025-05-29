@@ -33,7 +33,7 @@ class Reservas(db.Model):
 
 def create_reserva(dados_reserva):
     
-    url = f"{clients.API_PRINCIPAL_URL}/turmas/{dados_reserva["turma_id"]}"
+    url = f"{clients.API_PRINCIPAL_URL}/turmas/{dados_reserva['turma_id']}"
     response = requests.get(url)
 
     if response.status_code != 200:

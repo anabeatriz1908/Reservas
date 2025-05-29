@@ -17,7 +17,7 @@ def cria_reserva():
     dados = request.get_json()
     try:
         nova_reserva = reserva_model.create_reserva(dados)
-        if isinstance(nova_reserva, dict) and nova_reserva.get("message") == "Turma não existe":
+        if isinstance(nova_reserva, dict) and nova_reserva.get("message") == "Professor não encontrado":
             return jsonify({'erro': nova_reserva["message"]}), 400
         return jsonify(nova_reserva), 200
     except Exception as e:
