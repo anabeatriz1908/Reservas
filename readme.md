@@ -4,7 +4,7 @@ Este repositório contém a **API de Reserva de Salas**, desenvolvida com **Flas
 
 ## 🧩 Arquitetura
 
-A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema maior de [School System](#colocar link do nosso github), sendo responsável exclusivamente pelo gerenciamento das reservas de salas por turma.
+A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema maior de [School System], sendo responsável exclusivamente pelo gerenciamento das reservas de salas por turma.
 
 ⚠️ **Esta API depende de outra API de Gerenciamento Escolar (School System)**, que deve estar em execução e exposta localmente. A comunicação entre os serviços ocorre via **requisições HTTP REST**, para validar:
 
@@ -24,6 +24,7 @@ https://github.com/anabeatriz1908/API-School-System.git
 - SQLAlchemy
 - SQLite (como banco de dados local)
 - Requests (para consumo da API externa)
+- Docker
 
 ---
 
@@ -107,6 +108,7 @@ reserva-salas/
 ├── routes.py
 ├── requirements.txt
 ├── README.md
+├── Dockerfile
 ```
 
 ---
