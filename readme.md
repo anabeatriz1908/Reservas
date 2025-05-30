@@ -1,18 +1,29 @@
+
 # 📚 API de Reserva de Salas
 
 Este repositório contém a **API de Reserva de Salas**, desenvolvida com **Flask** e **SQLAlchemy**, como parte de uma arquitetura baseada em **microsserviços**.
 
 ## 🧩 Arquitetura
 
+<<<<<<< HEAD
 A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema maior de [School System](#colocar link do nosso github), sendo responsável exclusivamente pelo gerenciamento das reservas de salas por turma.
+=======
+A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema maior de [School System], sendo responsável exclusivamente pelo gerenciamento das reservas de salas por turma.
+>>>>>>> 4edac6bcca7546a6c2d8392263b89b25e97db8ec
 
 ⚠️ **Esta API depende de outra API de Gerenciamento Escolar (School System)**, que deve estar em execução e exposta localmente. A comunicação entre os serviços ocorre via **requisições HTTP REST**, para validar:
 
 - Se a **Turma** existe (`GET /turmas/<id>`)
 
+<<<<<<< HEAD
 A Api de gerenciamento escolar, esá disponivél no repositório abaixo.
 
 https://github.com/anabeatriz1908/API-School-System.git
+=======
+A Api de gerenciamento escolar, esá disponível no repositório abaixo:
+
+`https://github.com/anabeatriz1908/API-School-System.git`
+>>>>>>> 4edac6bcca7546a6c2d8392263b89b25e97db8ec
 
 
 ---
@@ -24,6 +35,7 @@ https://github.com/anabeatriz1908/API-School-System.git
 - SQLAlchemy
 - SQLite (como banco de dados local)
 - Requests (para consumo da API externa)
+- Docker
 
 ---
 
@@ -33,7 +45,11 @@ https://github.com/anabeatriz1908/API-School-System.git
 
 ```bash
 git clone https://github.com/anabeatriz1908/Reservas.git
+<<<<<<< HEAD
 cd reserva-salas
+=======
+cd Reservas
+>>>>>>> 4edac6bcca7546a6c2d8392263b89b25e97db8ec
 ```
 
 ### 2. Crie um ambiente virtual (opcional, mas recomendado)
@@ -62,24 +78,47 @@ A aplicação estará disponível em:
 📝 **Observação:** O banco de dados é criado automaticamente na primeira execução.
 
 ---
+## 🐳 Como Executar a API com Docker
+
+1. **Clone o repositório**
+
+```bash
+git clone https://github.com/anabeatriz1908/Reservas
+cd REservas
+```
+
+2. Construa a imagem Docker
+
+```bash
+docker build -t reservas .
+```
+
+3. Execute o container
+
+```bash
+docker run -d -p 5001:5001 reservas
+```
+
+4. A aplicação estará disponível em:
+📍 `http://localhost:5001`
+
+---
 
 ## 📡 Endpoints Principais
 
 - `GET /reservas` – Lista todas as reservas
 - `POST /reservas` – Cria uma nova reserva
 - `GET /reservas/<id>` – Detalha uma reserva
-- `PUT /reservas/<id>` – Atualiza uma reserva
-- `DELETE /reservas/<id>` – Remove uma reserva
+
 
 ### Exemplo de corpo JSON para criação:
 
 ```json
 {
   "turma_id": 1,
-  "sala": "101",
+  "num_sala": "101",
   "data": "2025-05-06",
-  "hora_inicio": "14:00",
-  "hora_fim": "16:00"
+  "id_turma": "2"
 }
 ```
 
@@ -90,7 +129,9 @@ A aplicação estará disponível em:
 Certifique-se de que a **API de Gerenciamento Escolar** esteja rodando em:
 
 ```
-http://localhost:5000
+localmente --> http://localhost:5036
+ou
+use o link --> https://apischoolsystem.onrender.com
 ```
 
 E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) estejam funcionando corretamente para que a validação seja feita com sucesso.
@@ -100,19 +141,35 @@ E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) es
 ## 📦 Estrutura do Projeto
 
 ```
-reserva-salas/
-│
+reservas/
+├── clients
+| ├── client.py
+├── instance
+| ├── reservas.db
+├── main
+| ├── reserva_controller.py
+| ├── reserva_model.py
+├── .dockerignore
 ├── app.py
-├── reserva_model.py
-├── database.py
-├── routes.py
-├── requirements.txt
-└── README.md
+├── config.py
+├── dockerfile
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
 ## 🧑‍💻 Autores
+
+<<<<<<< HEAD
+Ana Beatriz Silva Santos - RA: 2401228
+
+Luiz Otávio Santos Silva - RA: 2401300
+
+Murillo Rodrigues Santos Pereira - RA: 2400338
+
+=======
+Grupo 10:
 
 Ana Beatriz Silva Santos - RA: 2401228
 
@@ -120,8 +177,13 @@ Luiz Otávio Santos Silva - RA: 2401300
 
 Murillo Rodrigues Santos Pereira - RA: 2400338
 
+>>>>>>> 4edac6bcca7546a6c2d8392263b89b25e97db8ec
 Pablo Neves Vavrik - RA: 2400125
 
 Uatila dos Santos Silva - RA: 2400250
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4edac6bcca7546a6c2d8392263b89b25e97db8ec
 – Projeto educativo de arquitetura com Flask e microsserviços.
