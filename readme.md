@@ -1,3 +1,4 @@
+
 # 📚 API de Reserva de Salas
 
 Este repositório contém a **API de Reserva de Salas**, desenvolvida com **Flask** e **SQLAlchemy**, como parte de uma arquitetura baseada em **microsserviços**.
@@ -12,8 +13,7 @@ A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema m
 
 A Api de gerenciamento escolar, esá disponivél no repositório abaixo.
 
-https://github.com/anabeatriz1908/API-School-System.git
-
+` https://github.com/anabeatriz1908/API-School-System.git `
 
 ---
 
@@ -24,6 +24,7 @@ https://github.com/anabeatriz1908/API-School-System.git
 - SQLAlchemy
 - SQLite (como banco de dados local)
 - Requests (para consumo da API externa)
+- Docker
 
 ---
 
@@ -33,7 +34,7 @@ https://github.com/anabeatriz1908/API-School-System.git
 
 ```bash
 git clone https://github.com/anabeatriz1908/Reservas.git
-cd reserva-salas
+cd Reservas
 ```
 
 ### 2. Crie um ambiente virtual (opcional, mas recomendado)
@@ -59,7 +60,35 @@ python app.py
 A aplicação estará disponível em:
 📍 `http://localhost:5001`
 
+
 📝 **Observação:** O banco de dados é criado automaticamente na primeira execução.
+
+---
+
+## 🐳 Como Executar a API com Docker
+
+1. **Clone o repositório**
+
+```bash
+git clone https://github.com/anabeatriz1908/Reservas
+cd Reservas
+```
+
+2. Construa a imagem Docker
+
+```bash
+docker build -t reservas .
+```
+
+3. Execute o container
+
+```bash
+docker run -d -p 5001:5001 reservas
+```
+
+4. A aplicação estará disponível em:
+📍 `http://localhost:5001`
+
 
 ---
 
@@ -67,19 +96,18 @@ A aplicação estará disponível em:
 
 - `GET /reservas` – Lista todas as reservas
 - `POST /reservas` – Cria uma nova reserva
-- `GET /reservas/<id>` – Detalha uma reserva
-- `PUT /reservas/<id>` – Atualiza uma reserva
-- `DELETE /reservas/<id>` – Remove uma reserva
+- `GET /reservas/<id>` – Detalha uma reserva por id
+
 
 ### Exemplo de corpo JSON para criação:
 
 ```json
 {
-  "turma_id": 1,
-  "sala": "101",
-  "data": "2025-05-06",
-  "hora_inicio": "14:00",
-  "hora_fim": "16:00"
+  "turma_id": 0,
+  "num_sala": 0,
+  "data": "String",
+  "lab": true,
+  "turma_id": 0
 }
 ```
 
@@ -87,32 +115,42 @@ A aplicação estará disponível em:
 
 ## 🔗 Dependência Externa
 
-Certifique-se de que a **API de Gerenciamento Escolar** esteja rodando em:
+Certifique-se de que a **API de Gerenciamento Escolar** esteja rodando:
 
 ```
-http://localhost:5000
+localmente --> http://localhost:5036
+ou
+use o link --> https://apischoolsystem.onrender.com
 ```
 
-E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) estejam funcionando corretamente para que a validação seja feita com sucesso.
+E que o endpoint `GET /turmas/<id>` estejam funcionando corretamente para que a validação seja feita com sucesso.
 
 ---
 
 ## 📦 Estrutura do Projeto
 
 ```
-reserva-salas/
-│
+reservas/
+├── clients
+| ├── client.py
+├── instance
+| ├── reservas.db
+├── main
+| ├── reserva_controller.py
+| ├── reserva_model.py
+├── .dockerignore
 ├── app.py
-├── reserva_model.py
-├── database.py
-├── routes.py
-├── requirements.txt
-└── README.md
+├── config.py
+├── dockerfile
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
 ## 🧑‍💻 Autores
+
+Grupo 10:
 
 Ana Beatriz Silva Santos - RA: 2401228
 
@@ -123,5 +161,6 @@ Murillo Rodrigues Santos Pereira - RA: 2400338
 Pablo Neves Vavrik - RA: 2400125
 
 Uatila dos Santos Silva - RA: 2400250
+
 
 – Projeto educativo de arquitetura com Flask e microsserviços.
