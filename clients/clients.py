@@ -1,6 +1,6 @@
 import requests
 
-API_PRINCIPAL_URL = "http://localhost:5036"
+API_PRINCIPAL_URL = "https://apischoolsystem.onrender.com/"
 
 class PessoaServiceClient:
     @staticmethod
