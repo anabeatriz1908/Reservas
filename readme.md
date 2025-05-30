@@ -1,3 +1,4 @@
+
 # 📚 API de Reserva de Salas
 
 Este repositório contém a **API de Reserva de Salas**, desenvolvida com **Flask** e **SQLAlchemy**, como parte de uma arquitetura baseada em **microsserviços**.
@@ -61,6 +62,31 @@ A aplicação estará disponível em:
 📍 `http://localhost:5001`
 
 📝 **Observação:** O banco de dados é criado automaticamente na primeira execução.
+
+---
+## 🐳 Como Executar a API com Docker
+
+1. **Clone o repositório**
+
+```bash
+git clone https://github.com/anabeatriz1908/Atividades
+cd Atividades
+```
+
+2. Construa a imagem Docker
+
+```bash
+docker build -t atividades .
+```
+
+3. Execute o container
+
+```bash
+docker run -d -p 5036:5036 atividades
+```
+
+4. A aplicação estará disponível em:
+📍 `http://localhost:5001`
 
 ---
 
