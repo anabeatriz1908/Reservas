@@ -106,7 +106,7 @@ docker run -d -p 5001:5001 reservas
   "turma_id": 0,
   "num_sala": 0,
   "data": "String",
-  "lab": boolean,
+  "lab": true,
   "turma_id": 0
 }
 ```
