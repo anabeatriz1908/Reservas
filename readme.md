@@ -106,9 +106,9 @@ reserva-salas/
 ├── reserva_controller.py
 ├── database.py
 ├── routes.py
-├── requirements.txt
+├── dockerfile
 ├── README.md
-├── Dockerfile
+└── requirements.txt
 ```
 
 ---
