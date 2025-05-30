@@ -10,9 +10,9 @@ A API de Reserva de Salas é um **microsserviço** que faz parte de um sistema m
 
 - Se a **Turma** existe (`GET /turmas/<id>`)
 
-A Api de gerenciamento escolar, esá disponivél no repositório abaixo.
+A Api de gerenciamento escolar, esá disponível no repositório abaixo:
 
-https://github.com/anabeatriz1908/API-School-System.git
+`https://github.com/anabeatriz1908/API-School-System.git`
 
 
 ---
@@ -89,7 +89,7 @@ A aplicação estará disponível em:
 Certifique-se de que a **API de Gerenciamento Escolar** esteja rodando em:
 
 ```
-http://localhost:5036
+localmente --> http://localhost:5036
 ou
 use o link --> https://apischoolsystem.onrender.com
 ```
@@ -101,9 +101,9 @@ E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) es
 ## 📦 Estrutura do Projeto
 
 ```
-reserva-salas/
+reservas/
 ├── clients
-| ├── clients.py
+| ├── client.py
 ├── instance
 | ├── reservas.db
 ├── main
@@ -121,6 +121,8 @@ reserva-salas/
 
 ## 🧑‍💻 Autores
 
+Grupo 10:
+
 Ana Beatriz Silva Santos - RA: 2401228
 
 Luiz Otávio Santos Silva - RA: 2401300
@@ -130,5 +132,6 @@ Murillo Rodrigues Santos Pereira - RA: 2400338
 Pablo Neves Vavrik - RA: 2400125
 
 Uatila dos Santos Silva - RA: 2400250
+
 
 – Projeto educativo de arquitetura com Flask e microsserviços.
