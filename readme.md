@@ -76,10 +76,9 @@ A aplicação estará disponível em:
 ```json
 {
   "turma_id": 1,
-  "sala": "101",
+  "num_sala": "101",
   "data": "2025-05-06",
-  "hora_inicio": "14:00",
-  "hora_fim": "16:00"
+  "id_turma": "2"
 }
 ```
 
@@ -91,6 +90,8 @@ Certifique-se de que a **API de Gerenciamento Escolar** esteja rodando em:
 
 ```
 http://localhost:5036
+ou
+use o link --> https://apischoolsystem.onrender.com
 ```
 
 E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) estejam funcionando corretamente para que a validação seja feita com sucesso.
@@ -101,11 +102,16 @@ E que os endpoints de `GET /turmas/<id>` (e opcionalmente `GET /alunos/<id>`) es
 
 ```
 reserva-salas/
+├── clients
+| ├── clients.py
+├── instance
+| ├── reservas.db
+├── main
+| ├── reserva_controller.py
+| ├── reserva_model.py
+├── .dockerignore
 ├── app.py
-├── reserva_model.py
-├── reserva_controller.py
-├── database.py
-├── routes.py
+├── config.py
 ├── dockerfile
 ├── README.md
 └── requirements.txt
